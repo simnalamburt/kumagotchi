@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "test": "flow",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "flow-bin": "^0.24.0",
     "react": "15.0.2",
     "react-native": "^0.26.3"
   }

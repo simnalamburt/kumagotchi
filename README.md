@@ -3,6 +3,7 @@
 
 ```shell
 npm install
+npm test
 
 react-native run-ios
 ```
