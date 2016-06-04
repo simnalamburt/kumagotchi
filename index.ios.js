@@ -1,45 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+// @flow
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
-class kumagotchi extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+const kumagotchi = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
+      쿠마고치
+    </Text>
+    <Text style={styles.instructions}>
+      ㅇㅅㅇ)b
+    </Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#eeeeee',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 40,
+    fontWeight: '700',
     textAlign: 'center',
     margin: 10,
   },
@@ -50,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('kumagotchi', () => kumagotchi);
+AppRegistry.registerComponent('kumagotchi', _ => kumagotchi);
