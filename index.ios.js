@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, Image, View } from 'react-native';
 
 const kumagotchi = () => (
   <View style={styles.container}>
@@ -10,6 +10,9 @@ const kumagotchi = () => (
     <Text style={styles.instructions}>
       ㅇㅅㅇ)b
     </Text>
+    <Image
+      source={{uri: 'http://pds13.egloos.com/pds/200903/03/32/f0072332_49acb81808bea.jpg'}}
+    />
   </View>
 );
 
