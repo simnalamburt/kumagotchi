@@ -17,7 +17,7 @@ void setup() {
     pinMode(tilt, INPUT);
     pinMode(fsr1, INPUT);
     pinMode(fsr2, INPUT);
-    Serial.begin(9600);
+    Serial.begin(115200);
 }
 
 void loop() {

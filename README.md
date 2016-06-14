@@ -6,5 +6,5 @@
 cd bluno
 
 platformio run -t upload
-platformio serialports monitor
+platformio serialports monitor -b 115200
 ```
