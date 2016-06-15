@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^0.4.1"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.2"
+  }
+}
