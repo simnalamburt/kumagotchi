@@ -22,11 +22,19 @@ img {
 
 #main {
   background:
+    url('button0.png'),
     url('button1.png'),
     url('button2.png'),
     url('button3.png'),
-    url('button4.png'),
     url('bkground.png'),
     black;
   background-size: contain;
+}
+
+#main .button {
+  position: absolute;
+  outline: none;
+  top: 127px;
+  width: 57px;
+  height: 57px;
 }

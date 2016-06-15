@@ -18,7 +18,20 @@ const Front = _ => (
 const Main = _ => (
   <div id="main">
     <img src="res/bear-basic.png"/>
+    <div style={{position: 'absolute', left: 0, top: 0}}>
+    </div>
+    { [41, 134, 223, 305].map((left, i) =>
+      <div key={i} tabIndex="0"
+        className="button" style={{left}}
+        onFocus={_ => console.log(`Focusing ${i}`)}
+        onBlur={_ => console.log(`Leaving ${i}`)}
+      />
+    ) }
   </div>
+);
+
+const Menu = i => _ => (
+  <img src={`res/button${i}-active.png`}/>
 );
 
 render(
