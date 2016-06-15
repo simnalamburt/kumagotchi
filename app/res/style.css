@@ -1,18 +1,22 @@
 body { margin: 0; }
-
-#screen {
-  width: 100vw;
-  height: 100vh;
-
-  background: url('start.png');
-  background-size: contain;
-}
-
-#screen img {
+img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
 }
 
 .blink { animation: blinker 0.8s step-start infinite; }
 @keyframes blinker { 50% { opacity: 0.0; } }
+
+#target {
+  width: 100vw;
+  height: 100vh;
+}
+
+#front {
+  background: url('start.png');
+  background-size: contain;
+}
+
+#main {
+  text-align: center;
+}

@@ -6,7 +6,8 @@
     "babel-core": "^5.8.38",
     "electron": "^0.4.1",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.2.2"
