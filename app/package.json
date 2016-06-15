@@ -3,7 +3,9 @@
     "start": "electron ."
   },
   "dependencies": {
-    "electron": "^0.4.1"
+    "electron": "^0.4.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "electron-prebuilt": "^1.2.2"
