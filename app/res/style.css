@@ -2,6 +2,7 @@ body { margin: 0; }
 img {
   max-width: 100%;
   max-height: 100%;
+  display: block;
 }
 
 .blink { animation: blinker 0.8s step-start infinite; }
@@ -10,13 +11,22 @@ img {
 #target {
   width: 100vw;
   height: 100vh;
+  background: url('start.png'), #ffce00;
+  background-size: contain;
 }
 
 #front {
-  background: url('start.png');
+  background: url('start_button.png');
   background-size: contain;
 }
 
 #main {
-  text-align: center;
+  background:
+    url('button1.png'),
+    url('button2.png'),
+    url('button3.png'),
+    url('button4.png'),
+    url('bkground.png'),
+    black;
+  background-size: contain;
 }

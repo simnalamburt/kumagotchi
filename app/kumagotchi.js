@@ -1,17 +1,23 @@
 const React = require('react');
 const { render } = require('react-dom');
 const { Router, Route, Link, hashHistory } = require('react-router');
+const { screen } = require('./option.json');
+
+// Change inner size of the window to fit screen
+window.resizeTo(
+  window.outerWidth  - window.innerWidth  + screen.width  * screen.zoom,
+  window.outerHeight - window.innerHeight + screen.height * screen.zoom
+);
 
 const Front = _ => (
   <div id="front">
-    <Link to="/main"><img className="blink" src="res/2.png"/></Link>
+    <Link to="/main"><img className="blink" src="res/start_blink.png"/></Link>
   </div>
 );
 
 const Main = _ => (
   <div id="main">
-    <h1>Hello, world!</h1>
-    <p>ㅇㅅㅇ)/</p>
+    <img src="res/bear-basic.png"/>
   </div>
 );
 
