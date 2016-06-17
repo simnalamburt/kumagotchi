@@ -15,20 +15,32 @@ const Front = _ => (
   </div>
 );
 
-const Main = _ => (
-  <div id="main">
-    <img src="res/bear-basic.png"/>
-    <div style={{position: 'absolute', left: 0, top: 0}}>
-    </div>
-    { [41, 134, 223, 305].map((left, i) =>
-      <div key={i} tabIndex="0"
-        className="button" style={{left}}
-        onFocus={_ => console.log(`Focusing ${i}`)}
-        onBlur={_ => console.log(`Leaving ${i}`)}
-      />
-    ) }
-  </div>
-);
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { focus: null };
+  }
+
+  onFocus(i) { return _ => { this.setState({ focus: i }); }; }
+  onBlur(i)  { return _ => { this.setState({ focus: null }); }; }
+
+  render() {
+    return <div id="main">
+      <img src="res/bear-basic.png"/>
+      {
+        this.state.focus == null ? null : <img
+          style={{position: 'absolute', left: 0, top: 0}}
+          src={`res/button${this.state.focus}-active.png`}/>
+      }
+      { [41, 134, 223, 305].map((left, i) =>
+        <div key={i} tabIndex="0"
+          className="button" style={{left}}
+          onFocus={this.onFocus(i)} onBlur={this.onBlur(i)}
+        />
+      ) }
+    </div>;
+  }
+}
 
 const Menu = i => _ => (
   <img src={`res/button${i}-active.png`}/>
