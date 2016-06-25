@@ -66,6 +66,13 @@ img {
   font-size: 24px;
 }
 
+#main .option {
+  position: absolute;
+  top: 253px;
+  left: 41px;
+  width: 323px;
+}
+
 #main .button {
   position: absolute;
   outline: none;

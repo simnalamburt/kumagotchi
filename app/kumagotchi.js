@@ -15,53 +15,46 @@ const Front = _ => (
   </div>
 );
 
-const data = {
-  '1': {
-    hp: 'res/bar-10.png',
-    img: 'res/bear-lenny.png',
-    text: '이런거 옵하 좀 불캐해;',
-  },
-  '2': {
-    hp: 'res/bar-09.png',
-    img: 'res/bear-lenny2.png',
-    text: '이런거 옵하 좀 불캐해;',
-  },
-};
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
 
     setTimeout(_ => {
-      this.setState({ msg: 1 });
+      this.setState({ focus: 2 });
 
       setTimeout(_ => {
-        this.setState({ msg: 2 });
+        this.setState({ active: true });
+
+        setTimeout(_ => {
+          this.setState({ focus: null, msg: true });
+        }, 3000);
       }, 1000);
     }, 8000);
   }
 
   onFocus(focus) { return _ => { this.setState({ focus }); }; }
-  onBlur()  { return _ => { this.setState({ focus: null }); }; }
+  onBlur()  { return _ => { this.setState({ focus: 2 }); }; }
 
   render() {
     return <div id="main">
-      { this.state.msg == null ?
-        <img src="res/bear-lenny.png"/> :
+      <img src="res/bear-lenny.png"/>
+      { this.state.msg ?
         <div>
-          <img src={data[this.state.msg].img}/>
-          <img className="layer" src={data[this.state.msg].hp}/>
+          <img className="layer" src="res/bar-12.png"/>
           <img className="layer" src="res/balloon.png"/>
-          <img className="layer" src="res/balloon-icon.png"/>
+          <img className="layer" src="res/balloon-lenny.png"/>
           <div className="box">
-            <span>{ data[this.state.msg].text }</span>
+            <span>울 액희~<br/>기분이 조왓구나?ㅎ</span>
           </div>
-        </div>
+        </div> : null
       }
       {
         this.state.focus == null ? null : <img className="layer"
           src={`res/button${this.state.focus}-active.png`}/>
+      }
+      { this.state.focus !== 2 ? null :
+        <img className="option" src={this.state.active ? 'res/option-2.png' : 'res/option-1.png'}/>
       }
       { [41, 134, 223, 305].map((left, i) =>
         <div key={i} tabIndex="0"
