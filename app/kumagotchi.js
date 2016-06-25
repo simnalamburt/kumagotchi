@@ -15,23 +15,50 @@ const Front = _ => (
   </div>
 );
 
+const data = {
+  '1': {
+    hp: 'res/bar-10.png',
+    img: 'res/bear-lenny.png',
+    text: '이런거 옵하 좀 불캐해;',
+  },
+  '2': {
+    hp: 'res/bar-09.png',
+    img: 'res/bear-lenny2.png',
+    text: '이런거 옵하 좀 불캐해;',
+  },
+};
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { focus: null };
+    this.state = {};
+
+    setTimeout(_ => {
+      this.setState({ msg: 1 });
+
+      setTimeout(_ => {
+        this.setState({ msg: 2 });
+      }, 1000);
+    }, 8000);
   }
 
-  onFocus(i) { return _ => { this.setState({ focus: i }); }; }
-  onBlur(i)  { return _ => { this.setState({ focus: null }); }; }
+  onFocus(focus) { return _ => { this.setState({ focus }); }; }
+  onBlur()  { return _ => { this.setState({ focus: null }); }; }
 
   render() {
     return <div id="main">
-      <img src="res/bear-basic.png"/>
-      <img className="layer" src="res/balloon.png"/>
-      <img className="layer" src="res/balloon-icon.png"/>
-      <div className="box">
-        <span>헤헤~ 기분좋아~</span>
-      </div>
+      { this.state.msg == null ?
+        <img src="res/bear-lenny.png"/> :
+        <div>
+          <img src={data[this.state.msg].img}/>
+          <img className="layer" src={data[this.state.msg].hp}/>
+          <img className="layer" src="res/balloon.png"/>
+          <img className="layer" src="res/balloon-icon.png"/>
+          <div className="box">
+            <span>{ data[this.state.msg].text }</span>
+          </div>
+        </div>
+      }
       {
         this.state.focus == null ? null : <img className="layer"
           src={`res/button${this.state.focus}-active.png`}/>
