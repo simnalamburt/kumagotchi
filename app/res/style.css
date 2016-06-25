@@ -22,13 +22,46 @@ img {
 
 #main {
   background:
+    url('bar-11.png'),
     url('button0.png'),
     url('button1.png'),
     url('button2.png'),
     url('button3.png'),
     url('bkground.png'),
-    black;
+    white;
   background-size: contain;
+}
+
+#main .layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@font-face {
+  font-family: 'Morris';
+  src: url('fonts/morris.eot');
+  src:
+    local('☺'),
+    url('morris.woff') format('woff'),
+    url('morris.ttf') format('truetype'),
+    url('morris.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+#main .box {
+  position: absolute;
+  width: 235px;
+  height: 89px;
+  left: 125px;
+  top: 553px;
+  display: flex;
+  align-items: center;
+}
+
+#main .box > span {
+  font-family: 'Morris';
+  font-size: 24px;
 }
 
 #main .button {

@@ -27,9 +27,13 @@ class Main extends React.Component {
   render() {
     return <div id="main">
       <img src="res/bear-basic.png"/>
+      <img className="layer" src="res/balloon.png"/>
+      <img className="layer" src="res/balloon-icon.png"/>
+      <div className="box">
+        <span>헤헤~ 기분좋아~</span>
+      </div>
       {
-        this.state.focus == null ? null : <img
-          style={{position: 'absolute', left: 0, top: 0}}
+        this.state.focus == null ? null : <img className="layer"
           src={`res/button${this.state.focus}-active.png`}/>
       }
       { [41, 134, 223, 305].map((left, i) =>
